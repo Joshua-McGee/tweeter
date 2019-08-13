@@ -7,8 +7,15 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!-- Fonts used for the page -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
+
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -17,15 +24,45 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
-  <body>
+  <body class="body">
 
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
+    <nav class="nav">
+      <span class="navtext">tweeter</span>
+      <span class="navtextrightalign"><strong>Write</strong> a new tweet</span>
     </nav>
 
+    <header class ="backgroundcolor">
+        <div>
+            <img src="/images/profile-hex.png" class="img"> 
+        </div>
+        <br>
+        <div>
+            <h2 class="h2-center">Joshetta McGee</h2>
+        </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container main-content">
+
+        <section class="new-tweet">
+            <h2 >Compose Tweet</h2>
+            <form method="POST" action="/tweets/">
+              <textarea class="form-submit" name="text" placeholder="What will Trump say next?"></textarea>
+              <input class="tweetbutton tweetbutton:hover" type="submit" value="Tweet">
+              <span class="counter">1</span>
+            </form>
+          </section>
+        
+        <p>Only eight colors that you need. I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I have more fun than most people. We don't make mistakes we just have happy little accidents. Get away from those little Christmas tree things we used to make in school. Now we can begin working on lots of happy little things.</p>
+
+        <p>Just take out whatever you don't want. It'll change your entire perspective. Trees live in your fan brush, but you have to scare them out. If there's two big trees invariably sooner or later there's gonna be a little tree. The shadows are just like the highlights, but we're going in the opposite direction. Remember how free clouds are. They just lay around in the sky all day long.</p>
+        
+        <p>And just raise cain. Nothing wrong with washing your brush. Use what you see, don't plan it. Have fun with it.</p>
+        
+        <p>Isn't that fantastic? You can just push a little tree out of your brush like that. For the lack of a better word I call them hangy downs. Use your imagination, let it go.</p>
+        
+        <p>Maybe, just to play a little, we'll put a little tree here. Just a happy little shadow that lives in there. And I will hypnotize that just a little bit. You can create anything that makes you happy. A tree cannot be straight if it has a crooked trunk.</p>
     </main>
 
   </body>

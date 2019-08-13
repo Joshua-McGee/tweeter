@@ -1,0 +1,21 @@
+.backgroundcolor {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #cf9400;
+  background-image: url("https://www.transparenttextures.com/patterns/subtlenet.png");
+}
+
+.img {
+  display: block;
+  padding-top: 1.5em;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h2-center {
+  margin-top: .2em;
+  text-align: center;
+  color: #FFFFFF;
+}
