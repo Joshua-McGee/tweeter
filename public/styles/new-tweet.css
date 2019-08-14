@@ -11,7 +11,7 @@
 }
 
 .tweetbutton {
-  background-color: #4056A1;
+  background-color: #03A9F4;
   float: left;
   font-family: 'Bungee', cursive;
   color: #FFFFFF;
@@ -21,12 +21,17 @@
 }
 
 input[type="submit"]:hover {
-  background-color: #cf9400;
-  background-image: url("https://www.transparenttextures.com/patterns/subtlenet.png");
+  background-color: #ff9800;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
 
 .counter {
   float: right;
+}
+
+.red-counter {
+  float: right;
+  color: red;
 }
 
 h2 {
