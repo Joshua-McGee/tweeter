@@ -1,32 +1,5 @@
 $(document).ready(function () {
 
-  // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
   //loops through all our tweets and appends them to the html element with the id(#tweets-container)
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -78,8 +51,42 @@ $(document).ready(function () {
 
     return $tweet;
   };
-  // need to call the function with data passed into it
-  renderTweets(data);
+
+  // Fetches the creatures from the server, and updates the page
+  const loadTweets = function() {
+    $.ajax({ url: '/tweets' })
+      .then(tweets => {
+        // emptys my tweets
+        $('#tweets-container').empty(); 
+        // calls renderTweets to append them all to the page
+        renderTweets(tweets);
+      }, err => {
+        console.log('DID NOT WORK', err);
+        alert('Something went wrong :( ...' + err.statusText);
+      })
+  };
+
+  // function thats used to alert an error
+  const errorCreate = function (err) {
+    alert('Failed to submit tweet data');
+  }
+
+  // HIJACK THE FORM FOR AJAX POST
+  const form = $('.new-tweet-form');
+  form.on('submit', (evt) => {
+    //keeps the button from refreshing the page
+    evt.preventDefault();
+    // passes the form data and posts it to our server
+    $.ajax({
+      url: '/tweets/',
+      type: 'POST',
+      data: $(evt.target).serialize()
+    })
+    .then(loadTweets, errorCreate)
+  });
+
+  // need to call the function
+  loadTweets();
 
 });
 
