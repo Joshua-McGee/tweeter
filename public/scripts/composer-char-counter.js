@@ -4,17 +4,17 @@ $(document).ready(function() {
 
   $("#a-tweet").on('keyup', function(event) {
     // this gets our textboxt value's length
-    let LengthOfText = $(this).val().length;
+    let lengthOfText = $(this).val().length;
     // we then look at the sibling class .counter and set the text to be 140 - LengthOfText
-    let charCountOK = $(this).siblings('.counter').text(140 - LengthOfText);
+    const charCountOK = $(this).siblings('.counter').text(140 - lengthOfText);
     let charCountColor = charCountOK;
 
-    if (LengthOfText > 140) {
+    if (lengthOfText > 140) {
       //return console.log('im less than 0');
-      let charCountNotOk = $(this).siblings(".counter").addClass("red-counter");
+      const charCountNotOk = $(this).siblings(".counter").addClass("red-counter");
       charCountColor = charCountNotOk;
     } 
-    if (charCountColor === charCountOK && LengthOfText < 140) {
+     else if (charCountColor === charCountOK) {
       charCountColor = $(this).siblings(".counter").removeClass("red-counter");
     }
     return charCountColor;
