@@ -3,6 +3,7 @@ $(document).ready(function () {
   //change this if you want shorter or longer tweets
   const maxTweetLength = 140;
 
+  // jquery that toggles our form with a slight easing delay
   $(".toggle-tweet").click(function(){
     $(".new-tweet").toggle(500);
   });
