@@ -1,22 +1,24 @@
 .backgroundcolor {
+  float: left;
   position: relative;
-  width: 100%;
-  height: 400px;
+  width: 40vw;
+  height: 450px;
   background-color: #ff9800;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  margin-top: 100px;
   margin-bottom: 2em;
+  margin-left: 2em;
 }
 
 .profile-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .circular-portrait {
-  padding: 20px;
-  margin-top: 100px;
+  padding: 30px;
+  margin-top: 50px;
   width: 250px;
   height: 250px;
   overflow: hidden;
@@ -27,4 +29,24 @@
   margin-top: .2em;
   text-align: center;
   color: #FFFFFF;
+}
+
+/* Desktop View */
+@media (max-width: 1024px) {
+  .backgroundcolor {
+    float: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 2em;
+    margin-left: 0;
+  }
+
+  .circular-portrait {
+    padding: 20px;
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+  }
 }
