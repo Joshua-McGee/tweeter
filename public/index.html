@@ -43,13 +43,6 @@
       </span>
     </nav>
 
-    <!-- <div>
-      <a class="effect1" href="#">
-        Let's Go!
-        <span class="bg"></span>
-      </a>
-    </div> -->
-
     <header class ="backgroundcolor">
         <div>
             <img src="/images/joel_signature.gif" class="profile-img circular-portrait"> 
@@ -64,6 +57,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container main-content">
 
+        <!-- Our Compose tweet container that adds our input from textarea and posts it-->
         <section class="new-tweet">
             <h2 >Compose Tweet</h2>
             <form method="POST" action="/tweets/" class="new-tweet-form">
@@ -72,25 +66,8 @@
               <span class="counter">140</span>
             </form>
           </section>
-        <!--
-          <article class="tweetbox">
-            <header >
-               <img src='/images/joel_signature.gif' class="header-img">
-               <p class="name">Joshua</p>
-               <p class='handler-text'>@joshua</p>
-               <p class='main-text'>Some random tweet text</p>
-            </header>
-            <div class="footer-line"></div>
-            <footer>
-                <p class='date-time'>10 days ago</p>
-                <div class="icon-div">
-                    <img src="/images/retweet.png" class="icons">
-                    <img src="/images/flag.png" class="icons">
-                    <img src="/images/heart.png" class="icons">   
-                </div>            
-            </footer>
-          </article>
-        -->
+
+          <!--this div is where all our tweets are written too via our server DO NOT REMOVE IT-->
         <div id="tweets-container"></div>
     </main>
 
