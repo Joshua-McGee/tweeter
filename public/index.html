@@ -51,7 +51,7 @@
         </div>
         <br>
         <div>
-            <h2 id="click-nav" class="h2-center">Josh McGee</h2>
+            <h2 class="h2-center">Josh McGee</h2>
         </div>
         
     </header>
@@ -60,7 +60,7 @@
     <main class="container main-content">
 
         <!-- Our Compose tweet container that adds our input from textarea and posts it-->
-        <section class="new-tweet">
+        <section id="click-nav" class="new-tweet">
             <h2 >Compose Tweet</h2>
             <form method="POST" action="/tweets/" class="new-tweet-form">
               <textarea id="a-tweet" class="form-submit" name="text" placeholder="What will Trump say next?"></textarea>
@@ -68,6 +68,7 @@
               <span class="counter">140</span>
             </form>
           </section>
+
           <div class="left">
             <!--this div is where all our tweets are written too via our server DO NOT REMOVE IT-->
             <div id="tweets-container"></div>

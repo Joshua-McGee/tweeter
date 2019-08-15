@@ -24,6 +24,8 @@ nav {
 }
 
 .new-tweet {
+  margin-top: 150px;
+  margin-left: 46vw;
   margin-bottom: 10%;
 }
 
@@ -48,6 +50,11 @@ nav {
   .navtextrightalign {
     padding-top: 25px;
     padding-right: 25px;
+  }
+
+  .new-tweet{
+    display: inline-block;
+    margin-left: 0;
   }
 
 }
