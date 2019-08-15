@@ -37,3 +37,7 @@ input[type="submit"]:hover {
 h2 {
 text-align: left;
 }
+
+.new-tweet {
+  display:none;
+}

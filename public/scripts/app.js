@@ -3,6 +3,10 @@ $(document).ready(function () {
   //change this if you want shorter or longer tweets
   const maxTweetLength = 140;
 
+  $(".toggle-tweet").click(function(){
+    $(".new-tweet").toggle(500);
+  });
+
   //loops through all our tweets and appends them to the html element with the id(#tweets-container)
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
