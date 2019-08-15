@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+  //change this if you want shorter or longer tweets
+  const maxTweetLength = 140;
+
   //loops through all our tweets and appends them to the html element with the id(#tweets-container)
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -77,7 +80,7 @@ $(document).ready(function () {
     //keeps the button from refreshing the page
     evt.preventDefault();
     // this condition checks the length of our forms input and if its too long sends an alert and returns
-    if ($("#a-tweet").val().length > 140) {
+    if ($("#a-tweet").val().length > maxTweetLength) {
       alert('Too long server didnt read');
       return;
     }
