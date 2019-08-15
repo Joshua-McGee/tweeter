@@ -1,7 +1,6 @@
 .tweetbox {
   border:4px solid #545149;
   width: 100%;
-  height: 12.5em;
   transition-duration: 0.4s;
   margin-bottom: 2em;
 }
@@ -54,7 +53,7 @@
 .icon-div {
   float: right;
   margin-right: .8em;
-  margin-top: -1em;
+  margin-top: -1.5em;
   padding-right: .2em;
 }
 

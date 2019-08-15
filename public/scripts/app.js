@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   // this function is used to create our html elements and returns a article with all the info appended
   const createTweetElement = function(tweet) {
-    
+
     // takes tweet object and returns tweet article
     const avatarImg = $("<img>").attr("src", `${tweet.user.avatars}`).addClass("header-img");
     const name = $("<p>").text(`${tweet.user.name}`).addClass("name");
@@ -52,7 +52,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  // Fetches the creatures from the server, and updates the page
+  // Fetches the tweets from the server, and updates the page
   const loadTweets = function() {
     $.ajax({ url: '/tweets' })
       .then(tweets => {
@@ -66,9 +66,9 @@ $(document).ready(function () {
       })
   };
 
-  // function thats used to alert an error
+  // function thats used to alert an error on empty string
   const errorCreate = function (err) {
-    alert('Failed to submit tweet data');
+    alert('Why you no enter anything?');
   }
 
   // HIJACK THE FORM FOR AJAX POST
@@ -76,12 +76,18 @@ $(document).ready(function () {
   form.on('submit', (evt) => {
     //keeps the button from refreshing the page
     evt.preventDefault();
+    // this condition checks the length of our forms input and if its too long sends an alert and returns
+    if ($("#a-tweet").val().length > 140) {
+      alert('Too long server didnt read');
+      return;
+    }
     // passes the form data and posts it to our server
     $.ajax({
       url: '/tweets/',
       type: 'POST',
       data: $(evt.target).serialize()
     })
+    // the catch (errorCreate) is auto called when data is passed an empty string
     .then(loadTweets, errorCreate)
   });
 
@@ -89,4 +95,3 @@ $(document).ready(function () {
   loadTweets();
 
 });
-
