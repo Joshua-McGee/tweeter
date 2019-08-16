@@ -3,7 +3,7 @@
   outline: none;
   border: none;
   resize: none;
-  border-bottom: 4px solid  #545149;
+  border-bottom: 4px solid  #FF9800;
   text-align: left;
   width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
@@ -11,7 +11,7 @@
 }
 
 .tweetbutton {
-  background-color: #03A9F4;
+  background-color: #1976D2;
   float: left;
   font-family: 'Bungee', cursive;
   color: #FFFFFF;
@@ -21,9 +21,8 @@
 }
 
 input[type="submit"]:hover {
-  background-color: #ff9800;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  box-shadow: 0.1em 0.1em #03A9F4;
+  background-color: #2196F3;
+  box-shadow: 0.1em 0.1em #BBDEFB;
 }
 
 .counter {
@@ -41,4 +40,23 @@ text-align: left;
 
 .new-tweet {
   display:none;
+}
+
+.error-message {
+  /* display none at first */
+  display: none;
+  background-color: transparent;
+  border: red solid;
+}
+
+.error-message2 {
+  /* display none at first */
+  display: none;
+  background-color: transparent;
+  border: red solid;
+}
+
+.error-text {
+  text-align: center;
+  color: red;
 }

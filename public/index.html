@@ -45,6 +45,7 @@
       </span>
     </nav>
 
+    <!-- Background image and profile pic-->
     <header class ="backgroundcolor">
         <div>
             <img src="/images/joel_signature.gif" class="profile-img circular-portrait"> 
@@ -53,14 +54,16 @@
         <div>
             <h2 class="h2-center">Josh McGee</h2>
         </div>
-        
     </header>
 
+    <button id="myBtn" title="Go to top"><p><i class="arrow up"></i></p></button>
     <!-- Page-specific (main) content here -->
     <main class="container main-content">
 
         <!-- Our Compose tweet container that adds our input from textarea and posts it-->
         <section id="click-nav" class="new-tweet">
+            <div class="error-message"><p class="error-text">Error! This is not an essay keep it under 140</p></div>
+            <div class="error-message2"><p class="error-text">Error! You gotta type something...</p></div>
             <h2 >Compose Tweet</h2>
             <form method="POST" action="/tweets/" class="new-tweet-form">
               <textarea id="a-tweet" class="form-submit" name="text" placeholder="What will Trump say next?"></textarea>
@@ -69,6 +72,7 @@
             </form>
           </section>
 
+          <!--used to float content-->
           <div class="left">
             <!--this div is where all our tweets are written too via our server DO NOT REMOVE IT-->
             <div id="tweets-container"></div>

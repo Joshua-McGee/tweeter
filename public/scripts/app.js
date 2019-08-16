@@ -76,8 +76,12 @@ $(document).ready(function () {
 
   // function thats used to alert an error on empty string
   const errorCreate = function (err) {
-    alert('Why you no enter anything?');
-  }
+    $(".error-message2").slideDown(600, function (){
+      setTimeout( function (){
+        $(".error-message2").slideUp(600);
+      }, 2000);
+    });
+  };
 
   // HIJACK THE FORM FOR AJAX POST
   const form = $('.new-tweet-form');
@@ -86,7 +90,13 @@ $(document).ready(function () {
     evt.preventDefault();
     // this condition checks the length of our forms input and if its too long sends an alert and returns
     if ($("#a-tweet").val().length > maxTweetLength) {
-      alert('Too long server didnt read');
+      //change the state of our div from display none to show then back to display none
+      $(".error-message").slideDown(600, function (){
+        setTimeout( function (){
+          $(".error-message").slideUp(600);
+        }, 2000);
+      });
+      //alert('Too long server didnt read');
       return;
     }
     // passes the form data and posts it to our server
@@ -101,5 +111,23 @@ $(document).ready(function () {
 
   // need to call the function
   loadTweets();
+
+  // When the user scrolls down 250px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+  document.getElementById("myBtn").onclick = topFunction;
 
 });
