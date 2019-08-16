@@ -3,7 +3,7 @@ nav {
   height: 100px;
   top: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 100;
   background-color: #1976D2;
 }
 
@@ -11,7 +11,16 @@ nav {
   float: left;
   font-family: 'Bungee', cursive;
   color: #FFFFFF;
-  padding: 1.5em;
+  padding-top: 1.5em;
+  padding-left: 1em;
+}
+
+.logo {
+  float: left;
+  height: 3.5em;
+  z-index: 150;
+  padding-left: .5em;
+  padding-top: .5em;
 }
 
 .navtextrightalign {
@@ -38,28 +47,6 @@ nav {
     overflow: hidden;
     outline:none;
 }
-
-
-/* Desktop breakpoint */
-@media (max-width: 1024px) {
-  /*Makes the nav invisible*/
-  nav {
-    background-color: transparent;
-    position: relative;
-  }
-
-  .navtextrightalign {
-    padding-top: 25px;
-    padding-right: 25px;
-  }
-
-  .new-tweet{
-    display: inline-block;
-    margin-left: 0;
-  }
-
-}
-
 
 
 /* Cool button animation below */
@@ -168,4 +155,28 @@ nav {
 
 .effect1:hover .bg:after{
   top: 10px;
+}
+
+/* Desktop breakpoint */
+@media (max-width: 1024px) {
+  /*Makes the nav invisible*/
+  nav {
+    background-color: transparent;
+    position: relative;
+  }
+
+  .navtextrightalign {
+    padding-top: 25px;
+    padding-right: 25px;
+  }
+
+  .new-tweet{
+    display: inline-block;
+    margin-left: 0;
+  }
+
+  .effect1:hover{
+    color: #2196F3;
+  }
+
 }
