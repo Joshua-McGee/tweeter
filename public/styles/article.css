@@ -13,6 +13,10 @@
   opacity: 1;
 }
 
+.tweetbox:hover .icon-div {
+  opacity: 1;
+}
+
 .date-time {
   font-size: 1rem;
   margin-left: 1.5em;
@@ -57,6 +61,8 @@
 }
 
 .icon-div {
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
   float: right;
   margin-right: .8em;
   margin-top: -1.5em;

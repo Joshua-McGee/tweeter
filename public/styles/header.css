@@ -1,6 +1,5 @@
 .backgroundcolor {
-  float: left;
-  position: relative;
+  position: fixed;
   width: 35vw;
   height: 450px;
   background-color: #2196F3;

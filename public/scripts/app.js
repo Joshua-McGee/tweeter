@@ -144,6 +144,7 @@ function topFunction() {
   //empty the form
   function eraseText() {
     document.getElementById("a-tweet").value = "";
+    document.getElementById("counter-limit").innerText = "140";
   }
-
+  
 });
