@@ -8,6 +8,16 @@ $(document).ready(function () {
     $(".new-tweet").toggle(500);
   });
 
+  // function that returns the time in a managable format.
+  const newDate = function() {
+    let dateObj = new Date();
+    let month = dateObj.getUTCMonth() + 1;
+    let day = dateObj.getUTCDate();
+    let year = dateObj.getUTCFullYear();
+
+    return newdate = year + "/" + month + "/" + day;
+  }
+
   //loops through all our tweets and appends them to the html element with the id(#tweets-container)
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -36,7 +46,7 @@ $(document).ready(function () {
     // creates our div
     const divLine = $("<div>").addClass("footer-line");
 
-    const timeCreated = $("<p>").text(`${tweet.created_at}`).addClass("date-time");
+    const timeCreated = $("<p>").text(`${newDate()}`).addClass("date-time");
     const retweetIcon = $("<img>").attr("src", "/images/retweet.png").addClass("icons");
     const flagIcon = $("<img>").attr("src", "/images/flag.png").addClass("icons");
     const heartIcon = $("<img>").attr("src", "/images/heart.png").addClass("icons");
@@ -107,6 +117,7 @@ $(document).ready(function () {
     })
     // the catch (errorCreate) is auto called when data is passed an empty string
     .then(loadTweets, errorCreate)
+    eraseText();
   });
 
   // need to call the function
@@ -116,7 +127,7 @@ $(document).ready(function () {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
     document.getElementById("myBtn").style.display = "block";
   } else {
     document.getElementById("myBtn").style.display = "none";
@@ -129,5 +140,10 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
   document.getElementById("myBtn").onclick = topFunction;
+
+  //empty the form
+  function eraseText() {
+    document.getElementById("a-tweet").value = "";
+  }
 
 });
